@@ -16,9 +16,10 @@ C_END=$(echo -e '\033[00m')
 PS1='\[\033[01;32m\][$(date +%H:%M)] \[\033[01;34m\]\w/${C_END} \$ '
 
 # DISPLAY MOTD
+neofetch
 echo "" > weather_report.txt
 source $SCRIPT_DIR/utils/wttr.sh "${ZIP_CODE}?0&u" >> weather_report.txt
 fortune|cowthink >> fortune.txt
-python $SCRIPT_DIR/utils/padprint.py 45 weather_report.txt fortune.txt
+python $SCRIPT_DIR/utils/padprint.py 47 fortune.txt weather_report.txt
 rm weather_report.txt fortune.txt
 

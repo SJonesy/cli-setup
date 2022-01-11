@@ -13,7 +13,11 @@ source $SCRIPT_DIR/bash-aliases.sh
 
 # SET PROMPT
 C_END=$(echo -e '\033[00m')
-PS1='\[\033[01;32m\][$(date +%H:%M)] \[\033[01;34m\]\w/${C_END} \$ '
+GREEN=$(echo -e '\033[01;32m')
+BLUE=$(echo -e '\033[01;34m')
+# surrounding the colors with \[ and \] fixes trailing text problems
+# see: https://askubuntu.com/a/598816
+PS1='\[${GREEN}\][$(date +%H:%M)] \[${BLUE}\]\w/\[${C_END}\] \$ '
 
 # DISPLAY MOTD
 neofetch
